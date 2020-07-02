@@ -36,6 +36,8 @@ private:
 	float RotateSpeed = 100.0f;
 	FVector MoveDirection;
 	FQuat RotationDirection;
+	APlayerController *PlayerControllerRef;
+	FHitResult TraceHitResult;
 	void CalculateMoveInput(float Value);
 	void CalculateRotateInput(float Value);
 	void Move();
@@ -43,4 +45,5 @@ private:
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
+	virtual void HandleDestruction() override;
 };
