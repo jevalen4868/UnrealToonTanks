@@ -63,5 +63,6 @@ void APawnTank::Rotate() {
 }
 
 void APawnTank::HandleDestruction() {
-	// TODO: hide player
+	Super::HandleDestruction();
+	Destroy();
 }

@@ -22,6 +22,8 @@ public:
 	void GameOver(bool PlayerWon);
 private:
 	int32 TargetTurrets = 0;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Game Loop", meta = (AllowPrivateAccess = "true"))
+	int32 StartDelay{ 3 };
 	UPROPERTY(VisibleAnywhere, BlueprintReadonly, Category = "Player", meta = (AllowPrivateAccess = "true"))
 	APawnTank *PlayerTank;
 	void HandleGameStart();
