@@ -11,13 +11,15 @@ UHealthComponent::UHealthComponent() {
 	// off to improve performance if you don't need them.
 	PrimaryComponentTick.bCanEverTick = false;
 
-	Health = DefaultHealth;
+	// should not set dynamic values in constructor!!!
+	// Health = DefaultHealth;
 }
 
 
 // Called when the game starts
 void UHealthComponent::BeginPlay() {
 	Super::BeginPlay();
+	Health = DefaultHealth;
 	GameModeRef = Cast<ATankGameModeBase>(UGameplayStatics::GetGameMode(GetWorld()));
 	Owner = GetOwner();
 	if (Owner) {
