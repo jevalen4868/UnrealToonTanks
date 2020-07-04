@@ -29,6 +29,8 @@ private:
 	UPROPERTY(EditAnywhere, BlueprintReadonly, Category = "Projectile Type", meta = (AllowPrivateAccess = "true"))
 	TSubclassOf<AProjectileBase> ProjectileClass;
 	UPROPERTY(EditAnywhere, BlueprintReadonly, Category = "Effects", meta = (AllowPrivateAccess = "true"))
+	TSubclassOf<UCameraShake> DeathShake;
+	UPROPERTY(EditAnywhere, BlueprintReadonly, Category = "Effects", meta = (AllowPrivateAccess = "true"))
 	UParticleSystem *DeathParticle;
 	UPROPERTY(EditAnywhere, BlueprintReadonly, Category = "Effects", meta = (AllowPrivateAccess = "true"))
 	USoundBase *DeathSound;
