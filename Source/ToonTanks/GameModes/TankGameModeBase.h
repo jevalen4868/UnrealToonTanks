@@ -8,6 +8,7 @@
 
 class APawnTurret;
 class APawnTank;
+class APlayerControllerBase;
 
 UCLASS()
 class TOONTANKS_API ATankGameModeBase : public AGameModeBase
@@ -26,6 +27,7 @@ private:
 	int32 StartDelay{ 3 };
 	UPROPERTY(VisibleAnywhere, BlueprintReadonly, Category = "Player", meta = (AllowPrivateAccess = "true"))
 	APawnTank *PlayerTank;
+	APlayerControllerBase *PlayerControllerRef;
 	void HandleGameStart();
 	void HandleGameOver(bool PlayerWon);
 	int32 GetTargetTurretCount();
