@@ -19,12 +19,11 @@ class TOONTANKS_API APawnTank : public APawnBase
 	
 public:
 	APawnTank();
-
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
-
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent *PlayerInputComponent) override;
+	bool GetPlayerAlive();
 private:
 	UPROPERTY(VisibleAnywhere, BlueprintReadonly, Category = "Components", meta = (AllowPrivateAccess = "true"))
 	USpringArmComponent *SpringArm;
@@ -34,6 +33,7 @@ private:
 	float MoveSpeed = 100.0f;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Movement", meta = (AllowPrivateAccess = "true"))
 	float RotateSpeed = 100.0f;
+	bool bAlive{ true };
 	FVector MoveDirection;
 	FQuat RotationDirection;
 	APlayerController *PlayerControllerRef;
